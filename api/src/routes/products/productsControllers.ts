@@ -13,7 +13,6 @@ export function getProductById(req: Request, res: Response) {
 
 export function addProduct(req: Request, res: Response) {
   const newProduct = req.body;
-  res.json();
 }
 
 
