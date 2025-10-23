@@ -1,51 +1,23 @@
 import express, { Router }  from 'express';
-
+import {getProducts, getProductById, addProduct, updateProduct, deleteProduct} from './productsControllers.js'
 const router = Router();
-router.get('/', (req: any, res: { send: (arg0: string) => void; }) => {
-  res.send('Hello DevJ7 Here!')
-});
 
 //products endpoint
-router.get('/', 
-  (req: any, 
-   res: { json: (
-    arg: { 
-      id: number; 
-      name: string; 
-      price: number; }[]) => void; }) => {
-        res.json([
-          { id: 1, name: 'Example Product', price: 10000 },
-        ])
-      }
-    );
 
+//getting all products
+router.get('/', getProducts);
 
 //getting a product by id
-router.get('/:id', 
-  (req: any, 
-   res: { json: (
-    arg: { 
-      id: number; 
-      name: string; 
-      price: number; }[]) => void; }) => {
-        console.log(parseInt(req.params.id));//getting the id 
+router.get('/:id', getProductById);
 
-        res.json([
-          { id: 1, name: 'Example Product', price: 10000 },
-        ])
-      }
-    );
+//adding a new product
+router.post('/', addProduct);
 
-router.post('/', 
-  (req: any, 
-    res: { json: (
-      arg: { 
-        id: number; 
-        name: string; 
-        price: number; }) => void; }) => {
-  const newProduct = req.body;
-  res.json(newProduct);
-});
+//updating a product
+router.put('/:id', updateProduct)
+
+//deleting a product
+router.delete("/:id", deleteProduct)
 
 
 export default router;

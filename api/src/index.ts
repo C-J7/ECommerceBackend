@@ -12,5 +12,5 @@ app.use('/products', productRouter);
 
 
 app.listen(port, () => {
-  console.log(`App listening on port ${port}`)
+  console.log(`App and DevJ7 listening on port ${port}`)
 });

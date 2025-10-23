@@ -63,5 +63,10 @@ Replace or expand any sections to match your repository structure and migration 
 4. Use variables in request URLs: `{{baseUrl}}/products`
 
 
+
+
+the router is to controll the flow of data 
+the controller is to specify how we handle the request>
+
 ## Collaboration
 This is a NodeJS Practice Project but Collaborations are welcome!
