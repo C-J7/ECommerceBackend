@@ -1,12 +1,16 @@
 import express from 'express';
+import productRouter from './routes/products/index.js'
+import { Router } from 'express';
 
-const app = express()
-const port = 3000
+const app = express();
+const port = 3000;
+const router = Router();
 
-app.get('/', (req: any, res: { send: (arg0: string) => void; }) => {
-  res.send('Hello Worl53!')
-})
+
+
+app.use('/products', productRouter);
+
 
 app.listen(port, () => {
-  console.log(`Example api listening on port ${port}`)
-})
+  console.log(`App listening on port ${port}`)
+});

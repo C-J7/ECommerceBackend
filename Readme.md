@@ -42,6 +42,26 @@ A minimal E-commerce backend using Drizzle ORM with PostgreSQL. Includes basic d
 
 Replace or expand any sections to match your repository structure and migration setup.
 
+### TypeScript — common confusing setups and quick fixes
+
+- Files and extensions
+  - Node ESM requires runtime file extensions (usually `.js`). During development you may import `./routes/index.js` even if the source is `index.ts`; and the endpoint will still function as intended as tools like tsx/ts-node/esbuild handle this mapping. When compiling, ensure your imports match the emitted extensions.
+  - `allowImportingTsExtensions` — when enabled, you can import paths ending with `.ts` (rarely needed).
+  - `esModuleInterop` / `allowSyntheticDefaultImports` — fixes default import mismatch
+
+  - Keep a consistent build/dev setup so imports behave the same in development and production.
+
+### Testing the endpoints with Postman
+
+1. Start your server and note the base URL (e.g., http://localhost:<Port>).
+2. Create a Postman collection for this API and set an environment variable `baseUrl`.
+3. Common requests to add:
+   - GET /products
+   - GET /products/:id
+   - POST /products — set header `Content-Type: application/json` and provide a JSON body
+   - DELETE /products/:id
+4. Use variables in request URLs: `{{baseUrl}}/products`
+
 
 ## Collaboration
-Collaborations are welcome!
+This is a NodeJS Practice Project but Collaborations are welcome!
