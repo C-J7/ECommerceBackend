@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext", // Node ESM-aware module kind for modern Node + ESM
+    "target": "ES2022", // ES version
+    "moduleResolution": "nodenext", // use NodeNext resolution with ESM + CJS interop
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "./dist", // Output directory for compiled files
+    "strict": true, // Enable strict type-checking options
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "resolveJsonModule": true, // Include JSON imports
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": false, // Allow emitting output
+    "isolatedModules": true, // Required for using ESM modules
+    "baseUrl": ".", // Allow absolute imports relative to project root
+    "paths": {
+      "*": ["node_modules/*"]
+    },
+    "ignoreDeprecations": "6.0",
+    "incremental": true, // Enable incremental builds
+    "tsBuildInfoFile": "./.tsbuildinfo", // File to store build info
+    "noUncheckedIndexedAccess": true, // Enable stricter checks on indexed access
+    "useUnknownInCatchVariables": true, // Enable unknown in catch variables
+    "typeRoots": ["./node_modules/@types"],
+  }
+}
