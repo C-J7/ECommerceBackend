@@ -11,21 +11,24 @@ A minimal E-commerce backend using Drizzle ORM with PostgreSQL. Includes basic d
 ## Tech stack
 - Node.js
 - Express
-- Drizzle ORM
-- PostgreSQL
+- Drizzle ORM (Object relational model)
+- NeonDb for Serverless PostgreSql
 - TypeScript
 
 
 ## Prerequisites
 - Node.js (check with `node --version`)
 - PostgreSQL running and accessible
+- Postman or thunderClient or whatever tool you use to test API endpoints.
 
 ## Setup
 1. Initialize project (if not already):
   - `npm init`
 2. Install dependencies:
-  - `npm install express`
-  - `npm install -D typescript tsx @types/express`
+  - `npm i express`
+  - `npm i -D typescript tsx @types/express pg @types/pg`
+  - `npm i drizzle-orm`
+  - `npm i -D drizzle-kit` 
 3. Configure TypeScript (add `tsconfig.json`) and Drizzle ORM per your project needs.
 4. Initialize database and migrations with Drizzle ORM (see Drizzle docs for commands and config).
 
