@@ -22,7 +22,7 @@ A minimal E-commerce backend using Drizzle ORM with PostgreSQL. Includes basic d
 - Postman or thunderClient or whatever tool you use to test API endpoints.
 
 ## Setup
-1. Initialize project (if not already):
+1. Initialize project (if not done already):
   - `npm init`
 2. Install dependencies:
   - `npm i express`
