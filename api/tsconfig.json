@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "module": "NodeNext", // Node ESM-aware module kind for modern Node + ESM
+    "module": "node18", // Node ESM-aware module kind for modern Node + ESM
     "target": "ES2022", // ES version
-    "moduleResolution": "nodenext", // use NodeNext resolution with ESM + CJS interop
-    "esModuleInterop": true,
+    "moduleResolution": "node16", // use Node16 resolution with ESM + CJS interop
+    "esModuleInterop": true, // Enable interoperability between CommonJS and ES Modules
     "allowSyntheticDefaultImports": true,
     "outDir": "./dist", // Output directory for compiled files
     "strict": true, // Enable strict type-checking options
@@ -12,11 +12,10 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": false, // Allow emitting output
     "isolatedModules": true, // Required for using ESM modules
-    "baseUrl": ".", // Allow absolute imports relative to project root
     "paths": {
-      "*": ["node_modules/*"]
+      "*": ["./node_modules/*"]
     },
-    "ignoreDeprecations": "6.0",
+    
     "incremental": true, // Enable incremental builds
     "tsBuildInfoFile": "./.tsbuildinfo", // File to store build info
     "noUncheckedIndexedAccess": true, // Enable stricter checks on indexed access
