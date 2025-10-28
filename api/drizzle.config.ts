@@ -7,5 +7,6 @@ export default defineConfig({
   dbCredentials: {
     url: process.env.NEON_DB_CONNECTION_STRING || "Database connection URL not found",
   },
-  verbose: true
+  verbose: true,
+  strict: true
 });
