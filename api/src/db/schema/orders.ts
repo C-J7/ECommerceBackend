@@ -1,8 +1,9 @@
-import {pgTable, serial, integer, varchar} from "drizzle-orm/pg-core";
+import {pgTable, serial, integer, varchar, timestamp} from "drizzle-orm/pg-core";
 
 export const ordersTable = pgTable("orders", {
-  id: serial("id").primaryKey().notNull(),
-  user_name: varchar("user_name", {length: 100}).notNull(),
+  id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+  user_id: integer("user_id").notNull(),
   product_id: integer("product_id").notNull(),
-  quantity: integer("quantity").notNull()
+  quantity: integer("quantity").notNull(),
+  timestamp: timestamp("timestamp").defaultNow().notNull(),
 });
