@@ -34,8 +34,16 @@ A minimal E-commerce backend using Drizzle ORM with PostgreSQL. Includes basic d
 
 ## Run
 - Development (uses tsx):
-  - `npx tsx src/index.ts`
-  - Or via npm script (recommended): add a dev script such as `"dev": "tsx --watch src/index.ts"` and run `npm run dev`
+  - Run the server directly:
+    - `npx tsx src/index.ts`
+  - Recommended: use an npm script for development:
+    - Add to package.json: `"dev": "tsx --watch src/index.ts"` and run `npm run dev`
+  - Important: compile TypeScript output before running Drizzle commands
+    - Execute `npx tsc` to emit `.js` files to your configured output directory (e.g `dist`, `prod`, etx)
+    - Run `npx drizzle-kit push` only after compilation so Drizzle can detect the emitted `.js` files
+  - Verify Drizzle configuration:
+    - Adjust `drizzle.config.ts` so the `schema`/migrations paths point to your project’s compiled output and migration directories
+  - Ensure environment-specific paths and build output in `tsconfig.json` and `drizzle.config.ts` are consistent between development and CI/CD environments
 - Production:
   - Build and run compiled output, or run with `node --import=tsx src/index.ts` if required (less common)
 
