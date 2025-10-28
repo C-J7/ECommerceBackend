@@ -78,7 +78,7 @@ export async function updateProduct(req: Req<{ id: string }, any, Partial<Insert
     const updatedRows = await db
       .update(productsTable)
       .set(patch as Partial<InsertProduct>)
-      .where(eq(productsTable.id, id))
+      .where(eq(productsTable.id, id))//would otherwise update all rows
       .returning();
     const updated = updatedRows[0];
     if (!updated) {
@@ -98,7 +98,7 @@ export async function deleteProduct(req: Req<{ id: string }>, res: Res) {
   }
 
   try {
-    const deletedRows = await db.delete(productsTable).where(eq(productsTable.id, id)).returning();
+    const deletedRows = await db.delete(productsTable).where(eq(productsTable.id, id)).returning();//if the id isnt specified, everything will be deleted.
     const deleted = deletedRows[0];
     if (!deleted) {
       return res.status(404).json({ error: 'Product not found' });

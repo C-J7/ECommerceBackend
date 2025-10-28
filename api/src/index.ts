@@ -1,5 +1,6 @@
 import express, {json, urlencoded}  from 'express';
 import productRouter from './routes/products/index.js'
+import ordersRouter from './routes/orders/index.js'
 
 
 const app = express();
@@ -15,6 +16,7 @@ app.get('/', (req: any, res: any) => {
 });
 
 app.use('/products', productRouter);
+app.use('/orders', ordersRouter);
 
 
 app.listen(port, () => {
